@@ -50,7 +50,7 @@ public class Personagem : MonoBehaviour {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * forcaDoPulo);
         }
 
-        if (movimentoVertical == 0)
+      /*  if (movimentoVertical == 0)
         {
             animatorPersonagem.SetBool("pulando", false);
         }
@@ -58,7 +58,7 @@ public class Personagem : MonoBehaviour {
         {
             animatorPersonagem.SetBool("pulando", true);
 
-        }
+        }*/
 
 
         //faz a animação
@@ -69,9 +69,12 @@ public class Personagem : MonoBehaviour {
         }
         else
         {
-
+            if (!estaPulando)
+            {
+                animatorPersonagem.SetBool("andando", true);
+            }
             //amdando
-            animatorPersonagem.SetBool("andando", true);
+            
             if (movimentoHorizontal > 0)
             {
                 //direita
@@ -95,7 +98,9 @@ public class Personagem : MonoBehaviour {
         if (collision.gameObject.tag == "chao")
         {
             estaPulando = false;
+            animatorPersonagem.SetBool("pulando", false);
         }
+
     }
 
     public void AddQueijo()
@@ -110,6 +115,16 @@ public class Personagem : MonoBehaviour {
         {
             AddQueijo();
             Debug.Log("Quejos: " + queijos);
+        }
+    }
+
+   public void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "chao")
+        {
+            estaPulando = true;
+            animatorPersonagem.SetBool("pulando", true);
+            animatorPersonagem.SetBool("andando", false);
         }
     }
 }
