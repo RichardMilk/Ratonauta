@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E8BC0DE8-A134-FA45-A160-D599244A4FF5}</ProjectGuid>
+    <ProjectGuid>{541862D9-4B77-9616-B37B-CF8579242A65}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -51,13 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\script\Acido.cs" />
      <Compile Include="Assets\script\Boss.cs" />
+     <Compile Include="Assets\script\DestruirGatos.cs" />
+     <Compile Include="Assets\script\Gato.cs" />
+     <Compile Include="Assets\script\Health.cs" />
+     <Compile Include="Assets\script\Inimigo.cs" />
      <Compile Include="Assets\script\Menu.cs" />
      <Compile Include="Assets\script\Personagem.cs" />
+     <Compile Include="Assets\script\Plataforma.cs" />
      <Compile Include="Assets\script\Queijo.cs" />
+     <Compile Include="Assets\script\Tiro.cs" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/rikee/Downloads/Ratonauta1.2/2703/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/Users/rikee/OneDrive/Área de Trabalho/Ratonauta1.2/Ratonauta/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
