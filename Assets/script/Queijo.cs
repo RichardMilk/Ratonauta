@@ -8,7 +8,7 @@ public class Queijo : MonoBehaviour {
     public GameObject queijo;
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("pegarqueijo"))
         {
             Debug.Log("Colisão OK");
             Destroy(queijo);

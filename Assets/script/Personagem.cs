@@ -11,7 +11,10 @@ public class Personagem : MonoBehaviour {
 
     public int queijos = 0;
     public Text pontosTexto;
-
+    public float tempo;
+    public bool tempoGo;
+    public int vidas = 3;
+    public GameObject pesao;
    
 
     //componentes
@@ -19,7 +22,7 @@ public class Personagem : MonoBehaviour {
     public SpriteRenderer SpriteRendererPersonagem;
     //propriedades
     public float velocidade;
-    public float forcaDoPulo;
+    public float forcaDoPulo = 0;
     public bool estaPulando = false;
 
     //input do jogador
@@ -45,19 +48,22 @@ public class Personagem : MonoBehaviour {
     public void FixedUpdate()
     {
         if (!estaPulando && movimentoVertical > 0)
-        {
+            {
             estaPulando = true;
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * forcaDoPulo);
+            pesao.SetActive(false);
         }
 
         if (movimentoVertical == 0)
         {
             animatorPersonagem.SetBool("pulando", false);
+            
         }
         else
         {
-            animatorPersonagem.SetBool("pulando", true);
 
+            animatorPersonagem.SetBool("pulando", true);
+            
         }
 
 
@@ -95,8 +101,13 @@ public class Personagem : MonoBehaviour {
         if (collision.gameObject.tag == "chao")
         {
             estaPulando = false;
+            forcaDoPulo = 400;
+            pesao.SetActive(true);
         }
     }
+
+
+    //GetComponent<Rigidbody2D>().AddForce(Vector2.up * forcaDoPulo);
 
     public void AddQueijo()
     {

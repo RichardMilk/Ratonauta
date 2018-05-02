@@ -7,6 +7,9 @@ TagManager:
   - chao
   - queijominas
   - Boss
+  - pegarqueijo
+  - colidir
+  - naoechao
   layers:
   - Default
   - TransparentFX
@@ -43,4 +46,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: "ch\xE3o"
+    uniqueID: 2836003439
+    locked: 0
+  - name: fundo
+    uniqueID: 1206650231
+    locked: 0
+  - name: personagem
+    uniqueID: 3205170955
     locked: 0
