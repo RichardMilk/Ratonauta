@@ -7,9 +7,13 @@ TagManager:
   - chao
   - queijominas
   - Boss
+<<<<<<< HEAD
   - pegarqueijo
   - colidir
   - naoechao
+=======
+  - parede
+>>>>>>> cb685e0e2bb0615e876f7abd91a26e736e3dbb5f
   layers:
   - Default
   - TransparentFX

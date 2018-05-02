@@ -9,7 +9,7 @@ public class Gato : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(SpawnGatos(1f));
+        StartCoroutine(SpawnGatos(3f));
 	}
 	
 	// Update is called once per frame

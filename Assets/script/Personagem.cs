@@ -54,7 +54,7 @@ public class Personagem : MonoBehaviour {
             pesao.SetActive(false);
         }
 
-        if (movimentoVertical == 0)
+      /*  if (movimentoVertical == 0)
         {
             animatorPersonagem.SetBool("pulando", false);
             
@@ -62,9 +62,13 @@ public class Personagem : MonoBehaviour {
         else
         {
 
+<<<<<<< HEAD
             animatorPersonagem.SetBool("pulando", true);
             
         }
+=======
+        }*/
+>>>>>>> cb685e0e2bb0615e876f7abd91a26e736e3dbb5f
 
 
         //faz a animação
@@ -75,9 +79,12 @@ public class Personagem : MonoBehaviour {
         }
         else
         {
-
+            if (!estaPulando)
+            {
+                animatorPersonagem.SetBool("andando", true);
+            }
             //amdando
-            animatorPersonagem.SetBool("andando", true);
+            
             if (movimentoHorizontal > 0)
             {
                 //direita
@@ -101,9 +108,14 @@ public class Personagem : MonoBehaviour {
         if (collision.gameObject.tag == "chao")
         {
             estaPulando = false;
+<<<<<<< HEAD
             forcaDoPulo = 400;
             pesao.SetActive(true);
+=======
+            animatorPersonagem.SetBool("pulando", false);
+>>>>>>> cb685e0e2bb0615e876f7abd91a26e736e3dbb5f
         }
+
     }
 
 
@@ -121,6 +133,16 @@ public class Personagem : MonoBehaviour {
         {
             AddQueijo();
             Debug.Log("Quejos: " + queijos);
+        }
+    }
+
+   public void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "chao")
+        {
+            estaPulando = true;
+            animatorPersonagem.SetBool("pulando", true);
+            animatorPersonagem.SetBool("andando", false);
         }
     }
 }
